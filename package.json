@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "pad-left": "^2.1.0",
+    "pad-right": "^0.2.2",
+    "readline-sync": "^1.4.10"
+  }
+}
