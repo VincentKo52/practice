@@ -76,8 +76,8 @@ function join(values, separator) {
 const list1 = parseNumbers(readline.question('Enter list1: '));
 const list2 = parseNumbers(readline.question('Enter list2: '));
 
-const merged = merge(list1, list2);
-const sorted = sort(merged);
-const joined = join(sorted, ' ');
+// const merged = merge(list1, list2);
+// const sorted = sort(merged);
+// const joined = join(sorted, ' ');
 
-console.log(`The merged list is ${joined}`);
+console.log(`The merged list is ${join(sort(merge(list1, list2)), ' ')}`);
