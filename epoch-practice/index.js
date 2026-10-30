@@ -1,8 +1,5 @@
 'use strict';
 
-// Enter date: 8/10/1920
-// The day for 8/10/1920 is Tuesday
-
 const readline = require('readline-sync');
 
 /**
