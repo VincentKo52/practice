@@ -19,7 +19,11 @@ const EPOCH_MONTH = 1;
  * @type {number}
  */
 const EPOCH_FIRST_DAY = 3;
-    
+
+/**
+ * @typedef {0|1|2|3|4|5|6} DayIndex
+ */
+
 /**
  * @typedef {object} DatePoint
  * @property {number} day
@@ -98,26 +102,26 @@ function getNumberOfDaysSinceEpoch(date) {
 /**
  * Get the day index for the given date.
  * @param {DatePoint} date 
- * @returns {1|2|3|4|5|6|7} - date index
+ * @returns {DayIndex} - day index
  */
 function getDayForDate(date) {
-    return (EPOCH_FIRST_DAY + getNumberOfDaysSinceEpoch(date)) % 7
+    return (EPOCH_FIRST_DAY + getNumberOfDaysSinceEpoch(date)) % 7;
 }
 
 /**
  * Get day name in English for the given day index
- * @param {1|2|3|4|5|6|7} day
+ * @param {DayIndex} day - day index
  * @returns {string}
  */
 function getDayName(day) {
     switch (day) {
-        case 1: return 'Monday';
-        case 2: return 'Tuesday';
-        case 3: return 'Wednesday';
-        case 4: return 'Thursday';
-        case 5: return 'Friday';
-        case 6: return 'Saturday';
-        case 7: return 'Sunday';
+        case 0: return 'Monday';
+        case 1: return 'Tuesday';
+        case 2: return 'Wednesday';
+        case 3: return 'Thursday';
+        case 4: return 'Friday';
+        case 5: return 'Saturday';
+        case 6: return 'Sunday';
     }
 }
 
