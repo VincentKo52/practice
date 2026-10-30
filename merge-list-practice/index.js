@@ -81,3 +81,5 @@ const list2 = parseNumbers(readline.question('Enter list2: '));
 // const joined = join(sorted, ' ');
 
 console.log(`The merged list is ${join(sort(merge(list1, list2)), ' ')}`);
+
+
