@@ -1,23 +1,50 @@
 const readline = require('readline-sync');
 
 // Model
+/**
+ * Account constructor function
+ * 
+ * @param {number} id 
+ * @param {number} balance 
+ */
 function Account(id, balance) {
     this.id = id;
     this.balance = balance;
 
+    /**
+     * Withdraw a specific amount from the account
+     * @param {number} amount 
+     */
     this.withdraw = function(amount) {
         this.balance -= amount;
     };
 
+    /**
+     * Deposit a specific amount to the account
+     * @param {number} amount 
+     */
     this.deposit = function(amount) {
         this.balance += amount;
     };
 }
 
 // Controller
-function AccountController() {
-    this.accounts = [];
 
+/**
+ * AccountController constructor function
+ */
+function AccountController() {
+    /**
+     * The array of accounts that this controller controls.
+     */
+    this.accounts = [];
+    /**
+     * Generate initial accounts that are specified on the
+     * parameter with their balances.
+     * 
+     * @param {number} count 
+     * @param {number} balance 
+     */
     this.generateInitialAccounts = function(count, balance) {
         for (let i = 0; i < count; i++) {
             const account = new Account(i, balance);
@@ -25,6 +52,11 @@ function AccountController() {
         }
     };
 
+    /**
+     * Find account that matches the id passed in the parameter.
+     * @param {number} id 
+     * @returns {Account|undefined}
+     */
     this.findAccount = function(id) {
         for (i = 0; i < this.accounts.length; i++) {
             const account = this.accounts[i];
@@ -62,6 +94,7 @@ accountController.generateInitialAccounts(10, 100);
 while (true) {
     const accountId = +readline.question('Enter an id: ');
     const account = accountController.findAccount(accountId);
+
 
     if (!account) {
         continue;
