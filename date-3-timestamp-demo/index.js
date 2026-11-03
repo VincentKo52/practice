@@ -92,7 +92,7 @@ class Tanggal {
         if (hint === 'string') {
             let str = this.getFullYear();
             str += '-';
-            str += String(this.getMonth()).padStart(2, '0');
+            str += String(this.getMonth() + 1).padStart(2, '0');
             str += '-';
             str += String(this.getDate()).padStart(2, '0');
             str += 'T';
