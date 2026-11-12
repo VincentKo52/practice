@@ -4,7 +4,7 @@ class CalculateTaxError extends Error {  //Dengan class, error terjadi di calcul
 
         if (Error.captureStackTrace) {                         // karena method ini belum tentu ada di semua browser, maka pengecekan ditambahkan(pro)
             Error.captureStackTrace(this, CalculateTaxError);  // Best practicenya adalah walaupun extends ke Error, 
-        }                                                      // tetap harus exclude constructor itu sendiri secara manual
+        }                                                      // tetap harus exclude constructor itu sendiri secara manual (best practice)
     }                                                      
 }
 
@@ -14,7 +14,7 @@ class CalculateTaxError extends Error {  //Dengan class, error terjadi di calcul
 // }                                                     //(dengan cara menambah parameter tambahan kedalamnya -> fungsi yang ingin diexclude)
 
 // Di JavaScript engine seperti V8(Chrome), JavaScript Core(Safari) dan Mozilla Firefox, 
-// constuctor function nya sudah diexclude secara otomatis (best practice). 
+// constuctor function nya sudah diexclude secara otomatis. 
 // Namun di beberapa browser yang jelek, constructor function nya tidak diexclude sehingga menjadi tercemar.
 
 function calculateTax(amount) {
@@ -37,7 +37,7 @@ function processPayment(basePrice) {
 try {
     processPayment(100);
 } catch (err) {
-    console.log(err.stack);   // melihat stack trace (jejak error) dengan data type string
+    console.log(err.stack);   
 }
 
 
