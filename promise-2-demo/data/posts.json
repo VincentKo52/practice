@@ -1,0 +1,5 @@
+[
+    { "id": 1, "userId": 2, "title": "My Trip to Bali" },
+    { "id": 2, "userId": 1, "title": "Learning JavaScript" },
+    { "id": 3, "userId": 1, "title": "My Favorite Food" }
+]
