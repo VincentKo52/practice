@@ -39,7 +39,7 @@ const promiseAny = Promise.any([promise1, promise2, promise3]);
 promiseAny.then((value) => {
     console.log(value);
 }).catch((err) => {
-    console.log(err)
+    console.log(err);
 });
 // Promise.any = promise pertama yang duluan resolved
 // Maka di detik ke-4 akan tercetak '3' (promise pertama yang berasil resolved di 4000ms)
@@ -73,6 +73,15 @@ promiseAllSettled.then((value) => {
 //   { status: 'fulfilled', value: 3 }
 // ]
 
+promiseAllSettled.then((value) => {
+    const result = value.filter(p => p.status === 'fulfilled');
+    console.log(result);
+});
+// Memberikan filter agar hanya memunculkan promise yang 'fulfilled'
+// [
+//   { status: 'fulfilled', value: 1 },
+//   { status: 'fulfilled', value: 3 }
+// ]
 
 
 
